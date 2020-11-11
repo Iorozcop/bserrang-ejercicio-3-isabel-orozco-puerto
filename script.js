@@ -5,16 +5,14 @@
 let buttonShowList = document.getElementById("showList");
 buttonShowList.addEventListener("click", getUsers);
 
-function getUsers() {}
+function getUsers() {
+  fetch("users.json")
+    .then(response => response.json())
+    .then(data => {
+      let newArray = data.filter(user => user.money > 500);
 
-fetch('users.json')
-.then(response => response.json())
-.then(data => {
- console.log(data);
-  let newArray= data.filter(user => user.money>500);
-  console.log(newArray);
-  function forEach(newArray){
-    console.log()
-  }
-  });
-
+      newArray.forEach(function(x) {
+        console.log(x);
+      });
+    });
+}
