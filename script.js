@@ -13,5 +13,8 @@ fetch('users.json')
  console.log(data);
   let newArray= data.filter(user => user.money>500);
   console.log(newArray);
+  function forEach(newArray){
+    console.log()
+  }
   });
 
